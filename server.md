@@ -59,7 +59,7 @@ set temp_convar "hey world!"
 # Add system admins
 add_ace group.admin command allow # allow all commands
 add_ace group.admin command.quit deny # but don't allow quit
-add_principal identifier.fivem:2418236 group.admin #bryan_dee
+add_principal identifier.fivem:2418236 group.admin allow #bryan_dee
 
 # enable OneSync (required for server-side state awareness)
 set onesync on
