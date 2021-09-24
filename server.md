@@ -1,6 +1,21 @@
+exec permissions.cfg
+
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
+
+setr ea_LanguageName "en"                # set our language to english
+setr ea_MenuButton "PAGEUP"		 # set our menu button to F2, this is a one-time setting!
+setr ea_alwaysShowButtons "false"	# we don't want to see buttons we can't even access, do we? default: "false"
+set ea_moderationNotification "false"   # this can be either "false" or a discord webhook address, this will send a discord message if an admin takes actions against a player  ( such as banning and kicking )
+set ea_custombanlist "false"            # read docs for this, dont touch it
+set ea_enableCallAdminCommand "true"
+set ea_enableReportCommand "true"
+
+# DB connection string
+set mysql_connection_string "server=127.0.0.1;database=essentialmode;userid=root;password="
+set es_enableCustomData 1
+
 
 # These resources will start by default.
 ensure mapmanager
@@ -20,13 +35,14 @@ sv_scriptHookAllowed 0
 
 # A comma-separated list of tags for your server.
 # For example:
-sets tags "drifting, cars, racing"
-sets tags "roleplay, military, tanks"
-sets tags "default"
+# - sets tags "drifting, cars, racing"
+# Or:
+# - sets tags "roleplay, military, tanks"
+sets tags "verbal rp, semi serious rp, gang, asia, filipino, tagalog, philippines, content creator"
 
 # A valid locale identifier for your server's primary language.
 # For example "en-US", "fr-CA", "nl-NL", "de-DE", "en-GB", "pt-BR"
-sets locale "root-AQ" 
+sets locale "en-PH" 
 # please DO replace root-AQ on the line ABOVE with a real language! :)
 
 # Set an optional server info and connecting banner image url.
@@ -35,13 +51,11 @@ sets locale "root-AQ"
 #sets banner_connecting "https://url.to/image.png"
 
 # Set your server's hostname. This is not usually shown anywhere in listings.
-sv_hostname "FXServer, but unconfigured"
-
-# Set your server's Project Name
-sets sv_projectName RAVENS v2
-
-# Set your server's Project Description
-sets sv_projectDesc BREEZY WORKS
+sv_hostname "^4City ^6Of ^3Ravens | ^7Philippines"
+sets sv_projectName "^4City ^6Of ^3Ravens | ^7Philippines"
+sets sv_projectDesc "^4City ^6Of ^3Ravens | ^7Philippines"
+sets Developer CORengineers
+sets Owner CORowners 
 
 # Nested configs!
 #exec server_internal.cfg
@@ -59,18 +73,40 @@ set temp_convar "hey world!"
 # Add system admins
 add_ace group.admin command allow # allow all commands
 add_ace group.admin command.quit deny # but don't allow quit
-add_principal identifier.fivem:2418236 group.admin allow #bryan_dee
+add_ace group.admin inventory.openinventory allow
+add_ace group.admin easyadmin.player.kick allow
+add_ace group.mod easyadmin.player.kick allow
+add_ace group.mod easyadmin.player.spectate allow
+add_ace group.admin easyadmin.player.spectate allow
+add_ace group.admin easyadmin.player.kick allow
+add_ace group.admin easyadmin.server.cleanup.cars
+add_ace group.admin easyadmin.server.cleanup.props
+# add_ace group.mod easyadmin allow
+add_ace resource.essentialmode command.sets allow
+add_ace resource.essentialmode command.add_principal allow
+add_ace resource.essentialmode command.add_ace allow
+add_ace group.mod command allow # allow all commands
+add_ace group.mod command.quit deny # but don't allow quit
+add_ace group.admin jd.staff allow 
+add_principal identifier.steam:1100001344f67a4 group.admin allow #bryan_dee
+add_principal identifier.steam:11000011897f8c5 group.admin # Keyoo
+add_principal identifier.steam:110000113e927b6 group.admin # Gab
+add_principal identifier.steam:1100001139b7f2d # MARVEL
 
 # enable OneSync (required for server-side state awareness)
 set onesync on
 
 # Server player slot limit (see https://fivem.net/server-hosting for limits)
-sv_maxclients 48
+sv_maxclients 64
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey EC703CAC4A32DFE78AB7C63EC5303596
+set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
-
-sv_licenseKey g59lp3r8iob3yssu8bt6sasztbq6wsdm
+sv_licenseKey cfxk_118qJL3mor9TobuKUma0t_155ymm
+exec easyadmin_permissions.cfg
+add_ace resource.EasyAdmin command.add_ace allow
+add_ace resource.EasyAdmin command.remove_ace allow
+add_ace resource.EasyAdmin command.add_principal allow
+add_ace resource.EasyAdmin command.remove_principal allow

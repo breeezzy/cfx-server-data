@@ -1,4 +1,4 @@
-﻿exec permissions.cfg
+exec permissions.cfg
 
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 endpoint_add_tcp "0.0.0.0:30120"
@@ -12,6 +12,18 @@ set ea_custombanlist "false"            # read docs for this, dont touch it
 set ea_enableCallAdminCommand "true"
 set ea_enableReportCommand "true"
 
+# DB connection string
+set mysql_connection_string "server=127.0.0.1;database=essentialmode;userid=root;password="
+set es_enableCustomData 1
+
+#DATABASE
+
+start mysql-async
+start essentialmode
+start esplugin_mysql
+
+ensure [esx]
+ensure [ravencity]
 
 # These resources will start by default.
 ensure mapmanager
@@ -21,6 +33,8 @@ ensure sessionmanager
 ensure basic-gamemode
 ensure hardcap
 ensure rconlog
+
+
 
 # This allows players to use scripthook-based plugins such as the legacy Lambda Menu.
 # Set this to 1 to allow scripthook. Do note that this does _not_ guarantee players won't be able to use external plugins.
@@ -84,7 +98,7 @@ add_ace resource.essentialmode command.add_ace allow
 add_ace group.mod command allow # allow all commands
 add_ace group.mod command.quit deny # but don't allow quit
 add_ace group.admin jd.staff allow 
-add_principal identifier.steam:1100001344f67a4 group.admin #bryan_dee
+add_principal identifier.steam:1100001344f67a4 group.admin allow #bryan_dee
 add_principal identifier.steam:11000011897f8c5 group.admin # Keyoo
 add_principal identifier.steam:110000113e927b6 group.admin # Gab
 add_principal identifier.steam:1100001139b7f2d # MARVEL
@@ -97,7 +111,7 @@ sv_maxclients 64
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey EC703CAC4A32DFE78AB7C63EC5303596
+set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
 sv_licenseKey cfxk_118qJL3mor9TobuKUma0t_155ymm

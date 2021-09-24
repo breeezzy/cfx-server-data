@@ -1,10 +1,7 @@
 Config = {}
 Config.Locale = 'en'
 
-Config.Accounts = {
-	bank = _U('account_bank'),
-	black_money = _U('account_black_money'),
-	money = _U('account_money')
+Config.Accounts = {('account_bank'),('account_black_money'),
 }
 
 Config.StartingAccountMoney = {bank = 2000, money = 1000}
@@ -18,7 +15,7 @@ Config.MaxWeight            = 24000   -- the max inventory weight without backpa
 Config.PaycheckInterval     = 60 * 60000 -- how often to recieve pay checks in milliseconds
 
 Config.EnableDebug          = true
-Config.PrimaryIdentifier	= "steam" -- Options: steam, license (social club), fivem, discord, xbl, live (default steam, recommended: fivem) this SHOULD function with most older scripts too!
+Config.PrimaryIdentifier	= steam -- Options: steam, license (social club), fivem, discord, xbl, live (default steam, recommended: fivem) this SHOULD function with most older scripts too!
 
 -- The default player model you will use if no other scripts control your player model
 -- We have set a MP ped as default since if you use another script that controls your player model
