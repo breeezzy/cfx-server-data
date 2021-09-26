@@ -26,20 +26,6 @@ ensure basic-gamemode
 ensure hardcap
 ensure rconlog
 
-#DATABASE
-set mysql_connection_string "server=127.0.0.1;database=essentialmode;userid=root;password="
-set es_enableCustomData 1
-
-
-# Vanilla
-ensure mapmanager
-ensure chat
-ensure chat-theme-civlifechat
-ensure spawnmanager
-ensure sessionmanager
-ensure fivem
-ensure hardcap
-ensure rconlog
 
 ### YMAPS ###
 ensure raven-maps
@@ -446,7 +432,7 @@ sv_maxclients 255
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey ""
+set steam_webApiKey EC703CAC4A32DFE78AB7C63EC5303596
 
 # License key for your server (https://keymaster.fivem.net)
 sv_licenseKey cfxk_118qJL3mor9TobuKUma0t_155ymm
