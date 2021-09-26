@@ -1,5 +1,3 @@
-exec permissions.cfg
-
 # Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
 endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
@@ -15,6 +13,7 @@ set ea_enableReportCommand "true"
 #DATABASE
 set mysql_connection_string "server=127.0.0.1;database=essentialmode;userid=root;password="
 set es_enableCustomData 1
+sv_tebexSecret 58befae56907c64f4d973fe2dbabb1807b6faf5e
 
 
 # Vanilla
@@ -88,7 +87,6 @@ ensure esx_GiveCarKeys
 ensure vMenu
 ensure NativeUI
 ensure EasyAdmin
-ensure FiveM-BanSql
 
 # logs
 ensure JD_logs
@@ -430,14 +428,15 @@ add_principal identifier.steam:1100001139b7f2d # MARVEL
 onesync_enabled true
 
 # Server player slot limit (see https://fivem.net/server-hosting for limits)
-sv_maxclients 128
+sv_maxclients 255
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey "EC703CAC4A32DFE78AB7C63EC5303596"
+set steam_webApiKey EC703CAC4A32DFE78AB7C63EC5303596
 
 # License key for your server (https://keymaster.fivem.net)
 sv_licensekey cfxk_10seWXM8oCV17Fb7KOUJQ_2ptAP5
+
 exec easyadmin_permissions.cfg
 add_ace resource.EasyAdmin command.add_ace allow
 add_ace resource.EasyAdmin command.remove_ace allow
