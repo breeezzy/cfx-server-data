@@ -1,0 +1,65 @@
+{
+    "backups": [
+        {
+            "backupFile": "banlist_07_59_27_08_2021.json",
+            "id": 8,
+            "backupDate": "07_59_27_08_2021",
+            "backupTimestamp": 1630076397
+        },
+        {
+            "backupFile": "banlist_08_00_30_08_2021.json",
+            "id": 9,
+            "backupDate": "08_00_30_08_2021",
+            "backupTimestamp": 1630335624
+        },
+        {
+            "backupFile": "banlist_23_01_02_09_2021.json",
+            "id": 10,
+            "backupDate": "23_01_02_09_2021",
+            "backupTimestamp": 1630594879
+        },
+        {
+            "backupFile": "banlist_23_02_05_09_2021.json",
+            "id": 11,
+            "backupDate": "23_02_05_09_2021",
+            "backupTimestamp": 1630854159
+        },
+        {
+            "backupFile": "banlist_23_02_08_09_2021.json",
+            "id": 11,
+            "backupDate": "23_02_08_09_2021",
+            "backupTimestamp": 1631113379
+        },
+        {
+            "backupFile": "banlist_23_03_11_09_2021.json",
+            "id": 11,
+            "backupDate": "23_03_11_09_2021",
+            "backupTimestamp": 1631372618
+        },
+        {
+            "backupFile": "banlist_23_04_14_09_2021.json",
+            "id": 11,
+            "backupDate": "23_04_14_09_2021",
+            "backupTimestamp": 1631631864
+        },
+        {
+            "backupFile": "banlist_23_05_17_09_2021.json",
+            "id": 11,
+            "backupDate": "23_05_17_09_2021",
+            "backupTimestamp": 1631891140
+        },
+        {
+            "backupFile": "banlist_23_07_20_09_2021.json",
+            "id": 11,
+            "backupDate": "23_07_20_09_2021",
+            "backupTimestamp": 1632150425
+        },
+        {
+            "backupFile": "banlist_22_26_24_09_2021.json",
+            "id": 11,
+            "backupDate": "22_26_24_09_2021",
+            "backupTimestamp": 1632547561
+        }
+    ],
+    "lastBackup": 1632547561
+}
